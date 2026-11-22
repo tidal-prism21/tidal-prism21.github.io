@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>色界吧社区 | 官方视频品牌门户 - 原创高清内容生态</title>
+<meta name="description" content="色界吧社区官方网站，专注原创高清视频内容与创作者社区运营，汇聚多元影像、深度访谈与品牌故事，打造值得信赖的垂直内容生态平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1722'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%2338e8b0' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ff6b57'/%3E%3C/svg%3E">
+<style>
+:root{
+  --sj-bg:#0d1117;
+  --sj-panel:#151b24;
+  --sj-panel2:#1b2330;
+  --sj-line:#28313f;
+  --sj-text:#e8eef6;
+  --sj-muted:#9aa8ba;
+  --sj-green:#38e8b0;
+  --sj-coral:#ff6b57;
+  --sj-blue:#5aa9ff;
+  --sj-yellow:#ffd166;
+  --sj-radius:16px;
+  --sj-sticky:106px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sj-sticky)}
+body{
+  margin:0;background:var(--sj-bg);color:var(--sj-text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.sj-wrap{width:min(1180px,92%);margin:0 auto}
+.sj-skip{position:absolute;left:-999px;top:0;background:var(--sj-green);color:#04140f;padding:8px 16px;z-index:999}
+.sj-skip:focus{left:8px;top:8px}
+
+/* ===== 公告条 + 页头 吸顶 ===== */
+.sj-stickybar{position:sticky;top:0;z-index:100;background:rgba(13,17,23,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--sj-line)}
+.sj-notice{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  font-size:13px;padding:7px 0;color:#0c1a14;
+  background:linear-gradient(90deg,var(--sj-green),#7ef2cc 55%,var(--sj-yellow));
+}
+.sj-notice .sj-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sj-notice-tag{background:#0c1a14;color:var(--sj-green);font-weight:700;font-size:11px;padding:2px 9px;border-radius:99px;letter-spacing:.06em;white-space:nowrap}
+.sj-notice-list{display:flex;gap:18px;flex-wrap:wrap;font-weight:600}
+.sj-notice-list span::before{content:"▸ ";opacity:.6}
+.sj-header .sj-wrap{display:flex;align-items:center;gap:20px;min-height:60px}
+.sj-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.02em;white-space:nowrap}
+.sj-logo-mark{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 140deg,var(--sj-green),var(--sj-blue),var(--sj-coral),var(--sj-green));display:grid;place-items:center}
+.sj-logo-mark i{width:12px;height:12px;background:var(--sj-bg);border-radius:50%;display:block}
+.sj-logo small{display:block;font-size:10px;color:var(--sj-muted);font-weight:500;letter-spacing:.22em}
+.sj-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.sj-nav a{font-size:14px;color:var(--sj-muted);padding:8px 12px;border-radius:8px;transition:.2s;white-space:nowrap}
+.sj-nav a:hover,.sj-nav a.sj-active{color:var(--sj-text);background:var(--sj-panel2)}
+.sj-search{display:flex;align-items:center;gap:6px;background:var(--sj-panel2);border:1px solid var(--sj-line);border-radius:99px;padding:4px 4px 4px 14px}
+.sj-search input{background:none;border:0;color:var(--sj-text);font-size:13px;width:130px;outline:none}
+.sj-search input::placeholder{color:#6c7a8d}
+.sj-search button{background:var(--sj-green);color:#06140f;border:0;border-radius:99px;font-size:12px;font-weight:700;padding:6px 13px}
+.sj-burger{display:none;background:var(--sj-panel2);border:1px solid var(--sj-line);color:var(--sj-text);border-radius:9px;padding:7px 11px;font-size:16px;margin-left:auto}
+.sj-mobile{display:none;border-top:1px solid var(--sj-line);padding:10px 0 16px}
+.sj-mobile.sj-open{display:block}
+.sj-mobile a{display:block;padding:9px 4px;border-bottom:1px dashed var(--sj-line);font-size:14px;color:var(--sj-muted)}
+.sj-searchres{display:none;font-size:12px;color:var(--sj-muted);padding:4px 0 8px}
+.sj-searchres.sj-show{display:block}
+
+/* ===== 首屏 6:4 图文 ===== */
+.sj-hero{padding:46px 0 40px;border-bottom:1px solid var(--sj-line);position:relative;overflow:hidden}
+.sj-hero::after{content:"";position:absolute;right:-160px;top:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(56,232,176,.16),transparent 65%);pointer-events:none}
+.sj-hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:38px;align-items:center}
+.sj-hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;color:var(--sj-green);border:1px solid rgba(56,232,176,.4);border-radius:99px;padding:4px 12px;background:rgba(56,232,176,.07)}
+.sj-hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.16;margin:16px 0 14px;letter-spacing:.01em}
+.sj-hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--sj-green),var(--sj-blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sj-hero-lead{color:var(--sj-muted);font-size:15.5px;max-width:52ch;margin:0 0 18px}
+.sj-hero-intro{font-size:14px;color:#c3cedd;border-left:3px solid var(--sj-green);padding-left:14px;margin:0 0 22px;max-width:56ch}
+.sj-hero-intro b{color:var(--sj-green);font-weight:700}
+.sj-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.sj-btn{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:700;border:1px solid transparent;transition:.18s;white-space:nowrap}
+.sj-btn-primary{background:var(--sj-green);color:#06140f}
+.sj-btn-primary:hover{background:#5cf3c4;transform:translateY(-2px)}
+.sj-btn-ghost{border-color:var(--sj-line);color:var(--sj-text);background:var(--sj-panel)}
+.sj-btn-ghost:hover{border-color:var(--sj-green);color:var(--sj-green)}
+.sj-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px solid var(--sj-line);padding-top:18px;max-width:520px}
+.sj-stats b{display:block;font-size:22px;font-weight:800;color:var(--sj-green);letter-spacing:.01em}
+.sj-stats span{font-size:12px;color:var(--sj-muted)}
+.sj-hero-visual{position:relative}
+.sj-hero-visual img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--sj-radius);border:1px solid var(--sj-line)}
+.sj-hero-caption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(8,13,18,.82);border:1px solid var(--sj-line);border-radius:12px;padding:10px 13px;font-size:12px;color:#c7d3e2;backdrop-filter:blur(6px)}
+.sj-hero-caption strong{color:var(--sj-green);display:block;font-size:13px}
+
+/* ===== 通用板块 ===== */
+.sj-section{padding:52px 0;border-bottom:1px solid var(--sj-line)}
+.sj-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.sj-sec-head h2{font-size:clamp(22px,3vw,30px);margin:0;letter-spacing:.01em}
+.sj-sec-head h2 small{display:block;font-size:12px;color:var(--sj-muted);font-weight:500;letter-spacing:.2em;margin-top:6px}
+.sj-sec-desc{color:var(--sj-muted);font-size:14px;max-width:56ch;margin:8px 0 0}
+.sj-chiprow{display:flex;gap:8px;flex-wrap:wrap}
+.sj-chip{font-size:12px;border:1px solid var(--sj-line);background:var(--sj-panel);color:var(--sj-muted);border-radius:99px;padding:5px 12px;transition:.16s}
+.sj-chip:hover,.sj-chip.sj-on{color:#06140f;background:var(--sj-green);border-color:var(--sj-green);font-weight:700}
+
+/* 视频重点 + 列表 */
+.sj-feature-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:26px;align-items:start}
+.sj-vcard{background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:var(--sj-radius);overflow:hidden;transition:.2s}
+.sj-vcard:hover{border-color:rgba(56,232,176,.55);transform:translateY(-3px)}
+.sj-vcard img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.sj-vcard-body{padding:16px 18px 18px}
+.sj-vcard-body h3{margin:8px 0 8px;font-size:18px;line-height:1.4}
+.sj-vcard-body p{margin:0 0 12px;color:var(--sj-muted);font-size:13.5px}
+.sj-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--sj-muted);border-top:1px dashed var(--sj-line);padding-top:11px}
+.sj-meta b{color:var(--sj-text);font-weight:600}
+.sj-tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.sj-tag{font-size:11px;color:var(--sj-blue);background:rgba(90,169,255,.12);border-radius:5px;padding:2px 8px}
+.sj-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.sj-act{font-size:12px;background:var(--sj-panel2);border:1px solid var(--sj-line);color:var(--sj-muted);border-radius:99px;padding:5px 11px;transition:.16s}
+.sj-act:hover{color:var(--sj-text);border-color:var(--sj-green)}
+.sj-act.sj-liked{color:var(--sj-coral);border-color:var(--sj-coral)}
+.sj-act.sj-saved{color:var(--sj-yellow);border-color:var(--sj-yellow)}
+
+.sj-vlist{display:flex;flex-direction:column;gap:14px}
+.sj-vitem{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:13px;padding:15px 17px;transition:.16s}
+.sj-vitem:hover{background:var(--sj-panel2);border-color:rgba(90,169,255,.4)}
+.sj-vitem h3{margin:0 0 5px;font-size:15.5px;line-height:1.45}
+.sj-vitem p{margin:0 0 8px;font-size:13px;color:var(--sj-muted)}
+.sj-vitem-side{text-align:right;font-size:12px;color:var(--sj-muted);display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:96px}
+.sj-vitem-side b{color:var(--sj-green);font-size:15px}
+
+/* 专题 */
+.sj-topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.sj-topic{background:linear-gradient(160deg,var(--sj-panel2),var(--sj-panel));border:1px solid var(--sj-line);border-radius:var(--sj-radius);padding:20px;display:flex;flex-direction:column;gap:12px}
+.sj-topic h3{margin:0;font-size:18px}
+.sj-topic .sj-topic-state{font-size:11px;color:var(--sj-yellow);border:1px dashed rgba(255,209,102,.5);border-radius:99px;padding:2px 10px;align-self:flex-start}
+.sj-topic ul{margin:0;padding-left:18px;font-size:13px;color:var(--sj-muted);display:flex;flex-direction:column;gap:6px}
+.sj-topic ul li::marker{color:var(--sj-green)}
+
+/* 作者 双列简介 */
+.sj-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.sj-author{display:flex;gap:14px;background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:var(--sj-radius);padding:16px;transition:.18s}
+.sj-author:hover{border-color:rgba(56,232,176,.5)}
+.sj-avatar{width:52px;height:52px;border-radius:50%;flex:0 0 52px;display:grid;place-items:center;font-weight:800;font-size:19px;color:#06140f}
+.sj-author-info{min-width:0}
+.sj-author-info h3{margin:0;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sj-author-info h3 span{font-size:11px;color:var(--sj-green);border:1px solid rgba(56,232,176,.4);border-radius:99px;padding:1px 7px;font-weight:600}
+.sj-author-info .sj-author-field{font-size:12px;color:var(--sj-blue);margin:3px 0 6px}
+.sj-author-info p{margin:0 0 8px;font-size:12.5px;color:var(--sj-muted)}
+.sj-author-counts{display:flex;gap:14px;font-size:12px;color:var(--sj-muted);flex-wrap:wrap}
+.sj-author-counts b{color:var(--sj-text)}
+.sj-author-more{background:none;border:0;color:var(--sj-green);font-size:12px;padding:0;margin-top:6px;text-decoration:underline}
+
+/* 评论 短评列表 */
+.sj-comments{display:flex;flex-direction:column;gap:0;border:1px solid var(--sj-line);border-radius:var(--sj-radius);overflow:hidden;background:var(--sj-panel)}
+.sj-comment{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding:16px 18px;border-bottom:1px solid var(--sj-line)}
+.sj-comment:last-child{border-bottom:0}
+.sj-comment .sj-avatar{width:40px;height:40px;flex:0 0 40px;font-size:15px}
+.sj-comment h4{margin:0 0 2px;font-size:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sj-comment h4 time{font-size:11px;color:#6c7a8d;font-weight:400}
+.sj-comment p{margin:0;font-size:13px;color:var(--sj-muted)}
+.sj-stars{color:var(--sj-yellow);font-size:12px;letter-spacing:1px}
+
+/* 数据榜单 */
+.sj-rank-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px}
+.sj-rank{background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:var(--sj-radius);padding:18px}
+.sj-rank h3{margin:0 0 12px;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+.sj-rank h3 small{font-size:11px;color:var(--sj-muted);font-weight:400}
+.sj-rank ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.sj-rank li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:9px;align-items:center;font-size:13px}
+.sj-rank li i{font-style:normal;font-size:12px;font-weight:800;color:var(--sj-muted);text-align:center}
+.sj-rank li:nth-child(1) i{color:var(--sj-coral)}
+.sj-rank li:nth-child(2) i{color:var(--sj-yellow)}
+.sj-rank li:nth-child(3) i{color:var(--sj-green)}
+.sj-rank li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sj-rank li b{color:var(--sj-muted);font-size:12px;font-weight:500}
+
+/* 品牌解析长文 */
+.sj-deep{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:34px;align-items:start}
+.sj-deep article h2{margin-top:0}
+.sj-deep h3{font-size:17px;margin:26px 0 8px;color:var(--sj-green)}
+.sj-deep p{margin:0 0 12px;font-size:14px;color:#c3cedd}
+.sj-deep aside{background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:var(--sj-radius);padding:20px;position:sticky;top:calc(var(--sj-sticky) + 18px)}
+.sj-deep aside img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;margin-bottom:14px}
+.sj-deep aside h3{margin:0 0 8px;font-size:15px}
+.sj-deep aside p{font-size:12.5px;color:var(--sj-muted);margin:0 0 10px}
+.sj-deep aside ul{margin:0;padding-left:17px;font-size:12.5px;color:var(--sj-muted);display:flex;flex-direction:column;gap:6px}
+
+/* 企业动态 + 合作 + FAQ */
+.sj-three{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:24px;align-items:start}
+.sj-news h3,.sj-partners h3{margin:0 0 12px;font-size:16px}
+.sj-news ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.sj-news li{border-left:2px solid var(--sj-line);padding-left:12px}
+.sj-news li time{font-size:11px;color:#6c7a8d;display:block}
+.sj-news li strong{font-size:13.5px;font-weight:600;display:block;line-height:1.5}
+.sj-news li p{margin:2px 0 0;font-size:12px;color:var(--sj-muted)}
+.sj-partners .sj-partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sj-partner{border:1px dashed var(--sj-line);border-radius:11px;padding:12px 10px;text-align:center;font-size:12.5px;color:var(--sj-muted);transition:.16s}
+.sj-partner:hover{color:var(--sj-green);border-color:rgba(56,232,176,.5)}
+.sj-faq details{border:1px solid var(--sj-line);border-radius:11px;padding:11px 14px;margin-bottom:9px;background:var(--sj-panel)}
+.sj-faq details[open]{border-color:rgba(56,232,176,.5);background:var(--sj-panel2)}
+.sj-faq summary{cursor:pointer;font-size:13.5px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.sj-faq summary::-webkit-details-marker{display:none}
+.sj-faq summary::after{content:"+";color:var(--sj-green);font-weight:700}
+.sj-faq details[open] summary::after{content:"−"}
+.sj-faq details p{margin:9px 0 0;font-size:12.5px;color:var(--sj-muted)}
+
+/* 投稿 CTA */
+.sj-cta{background:linear-gradient(120deg,rgba(56,232,176,.14),rgba(90,169,255,.12));border:1px solid var(--sj-line);border-radius:var(--sj-radius);padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sj-cta h2{margin:0 0 6px;font-size:22px}
+.sj-cta p{margin:0;color:var(--sj-muted);font-size:13.5px;max-width:56ch}
+
+/* 页脚 */
+.sj-footer{background:#080c11;border-top:1px solid var(--sj-line);padding:40px 0 26px}
+.sj-footer-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:28px;margin-bottom:28px}
+.sj-footer h4{font-size:13px;margin:0 0 12px;color:var(--sj-text);letter-spacing:.06em}
+.sj-footer p,.sj-footer li,.sj-footer a{font-size:12.5px;color:var(--sj-muted)}
+.sj-footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.sj-footer a:hover{color:var(--sj-green)}
+.sj-footer-bottom{border-top:1px solid var(--sj-line);padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#6c7a8d}
+
+/* Toast / 弹窗 / 回顶 */
+.sj-toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:var(--sj-panel2);border:1px solid var(--sj-green);color:var(--sj-text);border-radius:99px;padding:10px 20px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:300}
+.sj-toast.sj-show{opacity:1;transform:translate(-50%,0)}
+.sj-modal{position:fixed;inset:0;background:rgba(4,8,12,.78);display:none;align-items:center;justify-content:center;z-index:250;padding:20px}
+.sj-modal.sj-show{display:flex}
+.sj-modal-box{background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:var(--sj-radius);padding:24px;width:min(520px,100%);max-height:86vh;overflow:auto}
+.sj-modal-box h3{margin:0 0 10px;font-size:18px}
+.sj-modal-box p{font-size:13px;color:var(--sj-muted);margin:0 0 12px}
+.sj-modal-box textarea,.sj-modal-box input[type=text]{width:100%;background:var(--sj-panel2);border:1px solid var(--sj-line);border-radius:10px;color:var(--sj-text);padding:10px 12px;font-size:13px;outline:none;margin-bottom:12px;resize:vertical}
+.sj-modal-box textarea:focus,.sj-modal-box input[type=text]:focus{border-color:var(--sj-green)}
+.sj-modal-close{background:var(--sj-panel2);border:1px solid var(--sj-line);color:var(--sj-muted);border-radius:99px;padding:6px 14px;font-size:12px}
+.sj-totop{position:fixed;right:20px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--sj-green);color:#06140f;border:0;font-size:18px;font-weight:800;display:none;z-index:200;box-shadow:0 8px 22px rgba(0,0,0,.4)}
+.sj-totop.sj-show{display:block}
+
+@media (max-width:960px){
+  .sj-hero-grid,.sj-feature-grid,.sj-deep,.sj-three{grid-template-columns:minmax(0,1fr)}
+  .sj-deep aside{position:static}
+  .sj-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sj-author-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  :root{--sj-sticky:96px}
+  .sj-nav,.sj-search{display:none}
+  .sj-burger{display:block}
+  .sj-vitem{grid-template-columns:minmax(0,1fr)}
+  .sj-vitem-side{flex-direction:row;justify-content:flex-start;text-align:left}
+  .sj-footer-grid{grid-template-columns:minmax(0,1fr)}
+  .sj-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sj-hero-visual img{aspect-ratio:16/10}
+  .sj-notice-list span:nth-child(2){display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="sj-skip" href="#sj-main">跳到主要内容</a>
+
+<div class="sj-stickybar">
+  <div class="sj-notice">
+    <div class="sj-wrap">
+      <span class="sj-notice-tag">官方发布</span>
+      <div class="sj-notice-list">
+        <span>《色界吧社区·影像年鉴 2026》专题上线，首批 12 支原创高清短片开放观看</span>
+        <span>「冬天的第一支短片」挑战赛报名开启，截止 12 月 20 日</span>
+        <span>创作者上传通道升级，支持 4K 无损下载</span>
+      </div>
+    </div>
+  </div>
+  <header class="sj-header">
+    <div class="sj-wrap">
+      <a class="sj-logo" href="#sj-top">
+        <span class="sj-logo-mark"><i></i></span>
+        <span>色界吧社区<small>SEJIEBA COMMUNITY</small></span>
+      </a>
+      <nav class="sj-nav" aria-label="主导航">
+        <a href="#sj-feature" class="sj-active">精选内容</a>
+        <a href="#sj-topics">专题企划</a>
+        <a href="#sj-authors">创作者</a>
+        <a href="#sj-comments">用户口碑</a>
+        <a href="#sj-deep">品牌解析</a>
+        <a href="#sj-help">帮助中心</a>
+      </nav>
+      <div class="sj-search" role="search">
+        <label class="sj-sr" for="sj-search-input" style="position:absolute;left:-9999px">搜索内容</label>
+        <input id="sj-search-input" type="text" placeholder="搜索视频、作者、专题" aria-label="搜索视频、作者、专题">
+        <button type="button" id="sj-search-btn">搜索</button>
+      </div>
+      <button class="sj-burger" type="button" id="sj-burger" aria-expanded="false" aria-controls="sj-mobile-nav">☰ 菜单</button>
+    </div>
+    <div class="sj-mobile" id="sj-mobile-nav">
+      <div class="sj-wrap">
+        <a href="#sj-feature">精选内容</a>
+        <a href="#sj-topics">专题企划</a>
+        <a href="#sj-authors">创作者矩阵</a>
+        <a href="#sj-comments">用户口碑</a>
+        <a href="#sj-rank">数据榜单</a>
+        <a href="#sj-deep">品牌深度解析</a>
+        <a href="#sj-help">帮助中心</a>
+        <a href="#sj-submit">投稿与合作</a>
+      </div>
+    </div>
+    <div class="sj-wrap"><div class="sj-searchres" id="sj-searchres"></div></div>
+  </header>
+</div>
+
+<main id="sj-main">
+
+  <!-- S2 首屏 -->
+  <section class="sj-hero" id="sj-top">
+    <div class="sj-wrap sj-hero-grid">
+      <div>
+        <span class="sj-hero-badge">官方网站 · 原创高清 · 持续运营</span>
+        <h1>色界吧社区</h1>
+        <p class="sj-hero-lead">一个以色彩为线索的原创影像社区：看片、学拍、找人、聊创作，把每一帧真实生活留在高清画面里。</p>
+        <p class="sj-hero-intro"><b>色界吧社区官网</b>由一支长期深耕垂直领域的内容团队运营，从 2019 年至今持续孵化原创作者与精品内容。我们相信影像不是流量的消耗品，而是可以陪伴成长的作品。平台以「真实、温暖、多元」为底色，为企业、创作者与普通用户搭起一座看得见的桥梁。</p>
+        <div class="sj-hero-actions">
+          <a class="sj-btn sj-btn-primary" href="#sj-feature">▶ 观看精选内容</a>
+          <a class="sj-btn sj-btn-ghost" href="#sj-authors">认识创作者</a>
+          <button class="sj-btn sj-btn-ghost" type="button" data-sj-modal="submit">我要投稿</button>
+        </div>
+        <div class="sj-stats">
+          <div><b>2860+</b><span>累计原创短片</span></div>
+          <div><b>47.6万</b><span>社区注册用户</span></div>
+          <div><b>97.2%</b><span>用户口碑好评率</span></div>
+        </div>
+      </div>
+      <div class="sj-hero-visual">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 800'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2a3d'/%3E%3Cstop offset='.55' stop-color='%231b3f4a'/%3E%3Cstop offset='1' stop-color='%230b1a22'/%3E%3C/linearGradient%3E%3CradialGradient id='g2' cx='.68' cy='.3' r='.5'%3E%3Cstop offset='0' stop-color='%2338e8b0' stop-opacity='.85'/%3E%3Cstop offset='1' stop-color='%2338e8b0' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='g3' cx='.25' cy='.75' r='.45'%3E%3Cstop offset='0' stop-color='%23ff6b57' stop-opacity='.6'/%3E%3Cstop offset='1' stop-color='%23ff6b57' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='640' height='800' fill='url(%23g1)'/%3E%3Crect width='640' height='800' fill='url(%23g2)'/%3E%3Crect width='640' height='800' fill='url(%23g3)'/%3E%3Cg fill='none' stroke='%237ef2cc' stroke-opacity='.35'%3E%3Ccircle cx='430' cy='250' r='120'/%3E%3Ccircle cx='430' cy='250' r='176'/%3E%3Ccircle cx='430' cy='250' r='62'/%3E%3C/g%3E%3Cg fill='%2338e8b0'%3E%3Ccircle cx='430' cy='250' r='16'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-opacity='.22'%3E%3Cpath d='M0 560 L640 470'/%3E%3Cpath d='M0 610 L640 520'/%3E%3Cpath d='M0 660 L640 570'/%3E%3C/g%3E%3Cg fill='%23ff6b57'%3E%3Crect x='78' y='640' width='60' height='8' rx='4'/%3E%3Crect x='78' y='662' width='118' height='8' rx='4' opacity='.6'/%3E%3Crect x='78' y='684' width='86' height='8' rx='4' opacity='.35'/%3E%3C/g%3E%3Cg fill='%23e8eef6' fill-opacity='.85'%3E%3Ccircle cx='96' cy='132' r='5'/%3E%3Ccircle cx='124' cy='160' r='3'/%3E%3Ccircle cx='160' cy='120' r='4'/%3E%3Ccircle cx='186' cy='176' r='2.5'/%3E%3C/g%3E%3Ctext x='78' y='740' fill='%23e8eef6' fill-opacity='.55' font-family='sans-serif' font-size='20' letter-spacing='6'%3ECOLOR FRAME 2026%3C/text%3E%3C/svg%3E" width="640" height="800" alt="色界吧社区首屏主视觉：深青与珊瑚色光影中的取景圆环">
+        <div class="sj-hero-caption"><strong>本季主企划 · 光影切片</strong>12 位创作者 × 12 座城市的色彩记录</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 精选内容 -->
+  <section class="sj-section" id="sj-feature">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div>
+          <h2>精选内容<small>FEATURED / 色界吧社区编辑部</small></h2>
+          <p class="sj-sec-desc">从每周上百支投稿中挑出的原创高清作品，覆盖城市、手作、访谈与影像教程，每一支都值得完整看完。</p>
+        </div>
+        <div class="sj-chiprow" id="sj-filter-chips">
+          <button class="sj-chip sj-on" type="button" data-filter="all">全部</button>
+          <button class="sj-chip" type="button" data-filter="城市">城市探索</button>
+          <button class="sj-chip" type="button" data-filter="教程">教程干货</button>
+          <button class="sj-chip" type="button" data-filter="访谈">人物访谈</button>
+          <button class="sj-chip" type="button" data-filter="手作">手作生活</button>
+        </div>
+      </div>
+
+      <div class="sj-feature-grid">
+        <article class="sj-vcard" data-cat="城市">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2313202c'/%3E%3Cstop offset='1' stop-color='%23263a4d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c1)'/%3E%3Cg fill='%235aa9ff' fill-opacity='.38'%3E%3Crect x='40' y='150' width='52' height='170'/%3E%3Crect x='104' y='110' width='40' height='210'/%3E%3Crect x='156' y='180' width='60' height='140'/%3E%3Crect x='228' y='90' width='46' height='230'/%3E%3Crect x='286' y='160' width='58' height='160'/%3E%3C/g%3E%3Cg fill='%2338e8b0' fill-opacity='.7'%3E%3Ccircle cx='470' cy='120' r='56'/%3E%3C/g%3E%3Cg fill='%23ffd166' fill-opacity='.55'%3E%3Crect x='386' y='214' width='210' height='12' rx='6'/%3E%3Crect x='386' y='240' width='150' height='12' rx='6'/%3E%3Crect x='386' y='266' width='180' height='12' rx='6'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-opacity='.2'%3E%3Cpath d='M0 320 L640 300'/%3E%3C/g%3E%3C/svg%3E" width="640" height="360" alt="夜色中的城市天际线与蓝色楼群剪影封面">
+          <div class="sj-vcard-body">
+            <div class="sj-tagrow"><span class="sj-tag">城市探索</span><span class="sj-tag">4K 高清</span><span class="sj-tag">官方精选</span></div>
+            <h3>《凌晨四点的城市色卡》：跟着环卫车走完一整条街</h3>
+            <p>创作者阿岸用三个月时间记录同一条街道从天黑到天亮的光线变化，素材量 1.2TB，最终剪成 8 分 42 秒。片中出现的每一种蓝都标注了色号，是本季最受好评的城市记录短片之一。</p>
+            <div class="sj-meta"><span>作者 <b>阿岸</b></span><span>播放 <b>18.6万</b></span><span>点赞 <b>1.4万</b></span><span>收藏 <b>8623</b></span></div>
+            <div class="sj-actions">
+              <button class="sj-act" type="button" data-sj-like>♡ 点赞 <span>1.4万</span></button>
+              <button class="sj-act" type="button" data-sj-save>☆ 收藏</button>
+              <button class="sj-act" type="button" data-sj-copy>复制链接</button>
+              <button class="sj-act" type="button" data-sj-modal="comment">写评论</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="sj-vlist" id="sj-video-list">
+          <article class="sj-vitem" data-cat="教程">
+            <div>
+              <h3>一支手机也能拍出电影感色彩？三个调色习惯的拆解</h3>
+              <p>从曝光补偿到色温微调，讲清「氛围」到底从哪里来，附带可保存的调色参数卡。</p>
+              <div class="sj-tagrow"><span class="sj-tag">教程干货</span><span class="sj-tag">手机影像</span></div>
+            </div>
+            <div class="sj-vitem-side"><b>9.8万</b><span>播放</span><button class="sj-act" type="button" data-sj-like>♡</button></div>
+          </article>
+          <article class="sj-vitem" data-cat="访谈">
+            <div>
+              <h3>访谈：手作陶艺人老黎，用 14 年把一间车库变成工作室</h3>
+              <p>关于坚持、失败与颜色的对话。他说，泥巴会记得你手心的温度。</p>
+              <div class="sj-tagrow"><span class="sj-tag">人物访谈</span><span class="sj-tag">创作幕后</span></div>
+            </div>
+            <div class="sj-vitem-side"><b>7.2万</b><span>播放</span><button class="sj-act" type="button" data-sj-like>♡</button></div>
+          </article>
+          <article class="sj-vitem" data-cat="手作">
+            <div>
+              <h3>把旧布料染回青色：一次失败的植物染与它的复盘</h3>
+              <p>不美化失败，才是最真实的教程。附媒染剂用量对照表与三次返工记录。</p>
+              <div class="sj-tagrow"><span class="sj-tag">手作生活</span><span class="sj-tag">经验分享</span></div>
+            </div>
+            <div class="sj-vitem-side"><b>6.4万</b><span>播放</span><button class="sj-act" type="button" data-sj-like>♡</button></div>
+          </article>
+          <article class="sj-vitem" data-cat="城市">
+            <div>
+              <h3>地铁末班车上的十七种困倦：一份通勤观察笔记</h3>
+              <p>没有台词，全部靠镜头与留白。创作者说这是她给这座城市写的散文。</p>
+              <div class="sj-tagrow"><span class="sj-tag">城市探索</span><span class="sj-tag">治愈影像</span></div>
+            </div>
+            <div class="sj-vitem-side"><b>12.1万</b><span>播放</span><button class="sj-act" type="button" data-sj-like>♡</button></div>
+          </article>
+          <article class="sj-vitem" data-cat="教程">
+            <div>
+              <h3>剪辑节奏课：让 30 秒短视频留住观众的四个停顿点</h3>
+              <p>拆解 6 支高完播率短片的剪辑时间轴，给出可直接套用的节奏骨架。</p>
+              <div class="sj-tagrow"><span class="sj-tag">教程干货</span><span class="sj-tag">实用技巧</span></div>
+            </div>
+            <div class="sj-vitem-side"><b>15.3万</b><span>播放</span><button class="sj-act" type="button" data-sj-like>♡</button></div>
+          </article>
+          <article class="sj-vitem" data-cat="访谈">
+            <div>
+              <h3>新人创作者圆桌：第一条片子拍砸之后，我们聊了三小时</h3>
+              <p>四位入驻不到半年的作者，谈设备焦虑、数据焦虑，以及为什么还在拍。</p>
+              <div class="sj-tagrow"><span class="sj-tag">人物访谈</span><span class="sj-tag">成长陪伴</span></div>
+            </div>
+            <div class="sj-vitem-side"><b>5.6万</b><span>播放</span><button class="sj-act" type="button" data-sj-like>♡</button></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="sj-section" id="sj-topics">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div>
+          <h2>专题企划<small>PROGRAMS / 长期更新</small></h2>
+          <p class="sj-sec-desc">色界吧社区的专题由编辑与创作者共同策划，围绕同一种颜色、同一类生活持续更新，形成可回看的精品内容序列。</p>
+        </div>
+      </div>
+      <div class="sj-topic-grid">
+        <article class="sj-topic">
+          <span class="sj-topic-state">更新中 · 已更 12 期</span>
+          <h3>光影切片：十二座城市的共同颜色</h3>
+          <p>每期由一位驻地创作者交出一支 6 分钟短片，用一座城市的清晨作为切片，串成完整的季节影像志。</p>
+          <ul>
+            <li>第 12 期｜凌晨的菜市场，绿色最先醒来</li>
+            <li>第 11 期｜沿海小城的蓝，有一半来自雾</li>
+            <li>第 10 期｜老火车站台上的暖黄色等待</li>
+          </ul>
+        </article>
+        <article class="sj-topic">
+          <span class="sj-topic-state">更新中 · 已更 8 期</span>
+          <h3>一个人的工作室：手作与耐心的对谈</h3>
+          <p>把镜头交给那些在车库里、阳台上、旧仓库中做东西的人，记录材料、工具和时间的真实关系。</p>
+          <ul>
+            <li>第 08 期｜陶艺老黎的第十四窑</li>
+            <li>第 07 期｜开在菜场二楼的木工房</li>
+            <li>第 06 期｜植物染与失败的三次返工</li>
+          </ul>
+        </article>
+        <article class="sj-topic">
+          <span class="sj-topic-state">已完结 · 共 6 期</span>
+          <h3>新手第一支片：从不敢拍到敢发布</h3>
+          <p>六期陪跑式教程，每期留下一个可检查的作业，完成者可在社区获得专属勋章与推荐位。</p>
+          <ul>
+            <li>第 06 期｜发布之后：如何面对第一条差评</li>
+            <li>第 05 期｜剪辑初稿自检的 9 个问题</li>
+            <li>第 04 期｜手持运镜的稳定呼吸法</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8-A 品牌深度解析（关键词解析长文） -->
+  <section class="sj-section" id="sj-deep">
+    <div class="sj-wrap sj-deep">
+      <article>
+        <h2>品牌深度解析：色界吧社区为什么值得长期停留<small>BRAND STORY / 深度阅读约 900 字</small></h2>
+        <p>在短视频被高频消费的今天，「色界吧社区」选择了一条更慢的路：把颜色当作分类方式，把作品当作长期资产。本文从社区机制、内容标准与创作者关系三个层面，解释这个品牌如何持续运营并积累口碑。</p>
+
+        <h3>一、以色彩为索引，重新组织影像社区</h3>
+        <p>传统视频平台的分类逻辑通常是「热门、影视、搞笑、生活」，用户点开是为了打发时间。色界吧社区则把色彩作为第一层索引：青色对应清晨与冷静的观察，暖黄对应厨房、旧物与家庭记忆，珊瑚红对应情绪浓度高的访谈与现场。这样的分类看起来抽象，实际使用时却非常直接——当一位创作者想找参考片时，他可以按「青灰色调的雨天」检索，而不是在上百个泛品类里翻找。平台的技术团队为此建立了一套内容标签体系，每支上传的短片会经过人工复核，标注主色调、光线类型、拍摄器材与叙事结构。这套体系目前覆盖了 2860 余支原创作品，检索准确率维持在 93% 左右。对普通用户来说，这意味着更少的时间浪费；对创作者来说，这意味着作品不会因为算法波动而彻底消失。</p>
+
+        <h3>二、内容标准：原创、高清、可追溯</h3>
+        <p>色界吧社区对「原创」的要求写进了《内容准则》：所有投稿必须是作者本人拍摄或拥有完整授权，音乐、字体、素材需提供来源说明。这听起来是基础要求，但在实际操作中，它带来了明显更高的内容品质。平台会为每条通过审核的作品生成一份「出处卡」，记录拍摄地、时间与授权信息，用户可以在作品详情页查看。高清同样是硬指标：主推内容要求 1080P 起步，重点企划支持 4K 原片下载，转码链路做了专门的色彩管理，避免上传后出现发灰或偏色。这些工作在流量层面并不显眼，却直接决定了社区的口碑。许多企业客户正是因为在一次线下放映中看到画面的稳定性，才决定与平台合作拍摄品牌纪录片。对于社区而言，品质不是宣传语，而是可被检验的流程。</p>
+
+        <h3>三、创作者关系：陪伴而不是消耗</h3>
+        <p>平台与创作者的关系，往往决定内容生态能走多远。色界吧社区的做法是「先给小，再给长」：新人入驻的第一个月，编辑会与其做一次 30 分钟的线上沟通，帮他把选题拆成可执行的拍摄计划；完成首支作品后，平台提供首页推荐位和一份具体的反馈清单，而不是一句笼统的「加油」。对于稳定更新的作者，社区提供设备借用、场地协作与联合拍摄机会，并以季度为单位结算创作激励。数据显示，连续更新超过一年的作者留存率为 71%，远高于行业平均水平。更重要的是，社区建立了一种温和的讨论氛围：评论区默认开启「认真评论」提示，鼓励具体建议，抑制无意义攻击。这种氛围让不少创作者愿意把更私人、更真实的故事放上来，也让「陪伴」与「成长」不只是口号。</p>
+
+        <h3>四、企业价值与社会责任</h3>
+        <p>作为一家持续运营的内容企业，色界吧社区同时承担着对外合作与公共表达的角色。我们为企业提供品牌视频策划、纪录片拍摄与内容代运营服务，合作方覆盖文化机构、独立书店、地方文旅与生活消费品牌。所有商业合作内容在页面中均有清晰标识，避免与社区原创推荐混淆。在公共层面，平台每年开放两个公益名额，为记录地方手艺、方言与老街影像的项目提供免费制作支持，并把这些作品长期保留在社区资料库中。这不是规模宏大的行动，但对被记录的人来说，是一次被认真对待的机会。我们认为，一个品牌的影响力不仅来自播放量，也来自它是否愿意为真实留下空间。用户至上、匠心与包容，最终都要落在具体的片子和具体的对话里。</p>
+      </article>
+      <aside>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 360'%3E%3Cdefs%3E%3ClinearGradient id='d1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b2330'/%3E%3Cstop offset='1' stop-color='%232b3648'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='360' fill='url(%23d1)'/%3E%3Cg stroke='%2338e8b0' stroke-opacity='.7' fill='none' stroke-width='2'%3E%3Crect x='52' y='70' width='150' height='96' rx='8'/%3E%3Crect x='52' y='186' width='150' height='96' rx='8'/%3E%3Crect x='224' y='70' width='204' height='212' rx='8'/%3E%3C/g%3E%3Cg fill='%23ff6b57' fill-opacity='.8'%3E%3Ccircle cx='90' cy='110' r='9'/%3E%3C/g%3E%3Cg fill='%23ffd166' fill-opacity='.8'%3E%3Ccircle cx='90' cy='226' r='9'/%3E%3C/g%3E%3Cg fill='%235aa9ff' fill-opacity='.55'%3E%3Crect x='248' y='96' width='156' height='10' rx='5'/%3E%3Crect x='248' y='122' width='112' height='10' rx='5'/%3E%3Crect x='248' y='148' width='136' height='10' rx='5'/%3E%3Crect x='248' y='196' width='88' height='10' rx='5'/%3E%3Crect x='248' y='222' width='146' height='10' rx='5'/%3E%3C/g%3E%3C/svg%3E" width="480" height="360" alt="色界吧社区内容管理看板示意图：色块分类与条目列表">
+        <h3>内容准则速览</h3>
+        <p>所有通过审核的作品均附出处卡，支持来源追溯。</p>
+        <ul>
+          <li>原创声明与授权信息完整</li>
+          <li>1080P 起步，重点企划支持 4K</li>
+          <li>评论区鼓励具体、有建设性的反馈</li>
+          <li>商业合作内容统一标识</li>
+          <li>每年开放两个公益记录名额</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵 -->
+  <section class="sj-section" id="sj-authors">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div>
+          <h2>创作者矩阵<small>CREATORS / 双列简介</small></h2>
+          <p class="sj-sec-desc">社区的核心不是内容数量，而是持续创作的人。以下六位作者长期在色界吧社区更新，覆盖城市、教程、访谈与手作方向。</p>
+        </div>
+      </div>
+      <div class="sj-author-grid">
+        <article class="sj-author">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#38e8b0,#5aa9ff)">岸</div>
+          <div class="sj-author-info">
+            <h3>阿岸 <span>认证创作者</span></h3>
+            <div class="sj-author-field">城市探索 · 光线记录</div>
+            <p>拍了七年街道，习惯在同一个路口等不同的天气。作品以长镜头和自然光为主，擅长用低饱和色调讲述城市里的普通人。相信耐心比设备更重要。</p>
+            <div class="sj-author-counts"><span>作品 <b>128</b></span><span>粉丝 <b>6.8万</b></span></div>
+            <button class="sj-author-more" type="button" data-sj-author="阿岸">查看作者档案</button>
+          </div>
+        </article>
+        <article class="sj-author">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#ff6b57,#ffd166)">黎</div>
+          <div class="sj-author-info">
+            <h3>老黎的手作间 <span>认证创作者</span></h3>
+            <div class="sj-author-field">手作 DIY · 陶艺</div>
+            <p>十四年陶艺经验，车库工作室主理人。视频里很少配乐，更多是拉坯轮的声音。希望让更多人看到手作的真实节奏，包括失败、返工与等待。</p>
+            <div class="sj-author-counts"><span>作品 <b>86</b></span><span>粉丝 <b>4.2万</b></span></div>
+            <button class="sj-author-more" type="button" data-sj-author="老黎的手作间">查看作者档案</button>
+          </div>
+        </article>
+        <article class="sj-author">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#5aa9ff,#7ef2cc)">夏</div>
+          <div class="sj-author-info">
+            <h3>夏知剪辑室 <span>教程作者</span></h3>
+            <div class="sj-author-field">教程干货 · 剪辑节奏</div>
+            <p>前广告公司剪辑师，现全职做影像教学。擅长把复杂的节奏问题拆成可执行的小步骤，课程以「作业可检查」著称，被不少新人称为入门第一站。</p>
+            <div class="sj-author-counts"><span>作品 <b>74</b></span><span>粉丝 <b>5.5万</b></span></div>
+            <button class="sj-author-more" type="button" data-sj-author="夏知剪辑室">查看作者档案</button>
+          </div>
+        </article>
+        <article class="sj-author">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#ffd166,#ff9c57)">周</div>
+          <div class="sj-author-info">
+            <h3>周野访谈录 <span>访谈主持</span></h3>
+            <div class="sj-author-field">人物访谈 · 深度对话</div>
+            <p>做人物访谈第六年，习惯提前两周做功课。提问不追热点，更在意对方愿意讲到哪里。他的片子常被形容为「慢，但不无聊」。</p>
+            <div class="sj-author-counts"><span>作品 <b>59</b></span><span>粉丝 <b>3.9万</b></span></div>
+            <button class="sj-author-more" type="button" data-sj-author="周野访谈录">查看作者档案</button>
+          </div>
+        </article>
+        <article class="sj-author">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#7ef2cc,#5aa9ff)">青</div>
+          <div class="sj-author-info">
+            <h3>青禾植物染 <span>生活方式</span></h3>
+            <div class="sj-author-field">植物染 · 家居收纳</div>
+            <p>在小城经营一间染坊，用视频记录天然染料的配比与失败。擅长把生活细节讲出层次，画面干净，配色以大地色与青绿为主。</p>
+            <div class="sj-author-counts"><span>作品 <b>63</b></span><span>粉丝 <b>2.7万</b></span></div>
+            <button class="sj-author-more" type="button" data-sj-author="青禾植物染">查看作者档案</button>
+          </div>
+        </article>
+        <article class="sj-author">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#ff6b57,#5aa9ff)">小</div>
+          <div class="sj-author-info">
+            <h3>小满看现场 <span>音乐现场</span></h3>
+            <div class="sj-author-field">音乐现场 · 城市活动</div>
+            <p>独立音乐现场记录者，常年背着相机跑小型演出场地。作品强调现场氛围与乐手的手部细节，也做本地音乐人的短访谈。</p>
+            <div class="sj-author-counts"><span>作品 <b>97</b></span><span>粉丝 <b>4.6万</b></span></div>
+            <button class="sj-author-more" type="button" data-sj-author="小满看现场">查看作者档案</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 用户评价 -->
+  <section class="sj-section" id="sj-comments">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div>
+          <h2>用户口碑<small>REVIEWS / 短评列表</small></h2>
+          <p class="sj-sec-desc">来自社区用户与合作伙伴的真实反馈，语气与关注点各不相同，我们原样保留。</p>
+        </div>
+      </div>
+      <div class="sj-comments">
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#38e8b0,#7ef2cc)">林</div>
+          <div>
+            <h4>林间慢步 <time>2026-11-18</time><span class="sj-stars">★★★★★</span></h4>
+            <p>第一次看到按颜色分类的视频平台，检索体验出乎意料地好用。上周想找低饱和的雨天素材，五分钟就找到三支合适的，而且都能看到拍摄说明，省了很多时间。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#5aa9ff,#38e8b0)">陈</div>
+          <div>
+            <h4>陈默的剪辑笔记 <time>2026-11-14</time><span class="sj-stars">★★★★☆</span></h4>
+            <p>教程区的作业机制很有意思，逼着我真的动手剪完一条。唯一的小建议是希望能按器材筛选，目前只能按色调和题材找参考片。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#ffd166,#ff6b57)">一</div>
+          <div>
+            <h4>一只旧相机 <time>2026-11-09</time><span class="sj-stars">★★★★★</span></h4>
+            <p>老黎的陶艺片子我看了三遍。没有夸张剪辑，也没有煽情配乐，就是拉坯轮一直转。看完之后我真的去报了一个周末陶艺体验课，这种推动力很难得。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#ff6b57,#ffd166)">木</div>
+          <div>
+            <h4>木木家的猫 <time>2026-11-03</time><span class="sj-stars">★★★★☆</span></h4>
+            <p>画面确实很干净，4K 下载也没有掉色。就是有些深度访谈时长偏长，通勤路上不太方便，希望以后能出精选片段版。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#7ef2cc,#5aa9ff)">文</div>
+          <div>
+            <h4>文创品牌「拾光」合作方 <time>2026-10-27</time><span class="sj-stars">★★★★★</span></h4>
+            <p>我们委托拍摄了一支品牌纪录片，从前期沟通到交付一共三周，节奏可控，拍摄脚本改了两轮都很有耐心。上线后官网的停留时长提升了接近四成，是很实在的合作。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#5aa9ff,#ffd166)">南</div>
+          <div>
+            <h4>南方小城的阿南 <time>2026-10-21</time><span class="sj-stars">★★★★★</span></h4>
+            <p>评论区氛围是我最喜欢的部分。上一条作品有人认真指出我收音有问题，还给了具体的设备建议，这种反馈在别的地方很少见，愿意留下来就是因为这个。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#38e8b0,#ff6b57)">柯</div>
+          <div>
+            <h4>柯基不加班 <time>2026-10-15</time><span class="sj-stars">★★★★☆</span></h4>
+            <p>新人榜很有鼓励作用，我第一条片子只有两百多播放，但收到编辑的三条具体建议，比数据本身更让我想继续拍下去。</p>
+          </div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-avatar" style="background:linear-gradient(135deg,#ffd166,#7ef2cc)">十</div>
+          <div>
+            <h4>十三月的风 <time>2026-10-08</time><span class="sj-stars">★★★★★</span></h4>
+            <p>专题企划做得像杂志，一期一期追着看。光影切片这个系列让我重新注意到住的城市，原来早上六点半的光线这么好。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 数据榜单 -->
+  <section class="sj-section" id="sj-rank">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div>
+          <h2>社区数据榜单<small>RANKING / 每周更新</small></h2>
+          <p class="sj-sec-desc">榜单由播放、完播、点赞与评论质量综合计算得出，不包含商业推广内容，仅为社区观察提供参照。</p>
+        </div>
+      </div>
+      <div class="sj-rank-grid">
+        <div class="sj-rank">
+          <h3>热度榜 <small>近 7 天</small></h3>
+          <ol>
+            <li><i>1</i><span>凌晨四点的城市色卡</span><b>18.6万</b></li>
+            <li><i>2</i><span>剪辑节奏：四个停顿点</span><b>15.3万</b></li>
+            <li><i>3</i><span>地铁末班车的十七种困倦</span><b>12.1万</b></li>
+            <li><i>4</i><span>手机调色的三个习惯</span><b>9.8万</b></li>
+            <li><i>5</i><span>陶艺人老黎的第十四窑</span><b>7.2万</b></li>
+          </ol>
+        </div>
+        <div class="sj-rank">
+          <h3>新人榜 <small>入驻 90 天内</small></h3>
+          <ol>
+            <li><i>1</i><span>把周末过成一部小电影</span><b>3.6万</b></li>
+            <li><i>2</i><span>菜市场里的颜色观察</span><b>2.9万</b></li>
+            <li><i>3</i><span>第一支访谈：我妈妈的书店</span><b>2.4万</b></li>
+            <li><i>4</i><span>雨天窗台静物练习</span><b>1.8万</b></li>
+            <li><i>5</i><span>用旧衣服做一件围裙</span><b>1.5万</b></li>
+          </ol>
+        </div>
+        <div class="sj-rank">
+          <h3>口碑榜 <small>评论质量加权</small></h3>
+          <ol>
+            <li><i>1</i><span>一个人的工作室系列</span><b>4.9</b></li>
+            <li><i>2</i><span>光影切片·十二城</span><b>4.8</b></li>
+            <li><i>3</i><span>新手第一支片陪跑</span><b>4.8</b></li>
+            <li><i>4</i><span>周野访谈录</span><b>4.7</b></li>
+            <li><i>5</i><span>青禾植物染手记</span><b>4.6</b></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 辅助：企业动态 + 合作 + FAQ -->
+  <section class="sj-section" id="sj-help">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div>
+          <h2>企业动态与服务支持<small>UPDATES &amp; SUPPORT</small></h2>
+          <p class="sj-sec-desc">平台更新、合作伙伴与常见问题的集中说明。色界吧社区官网会持续同步官方发布信息，减少用户查找成本。</p>
+        </div>
+      </div>
+      <div class="sj-three">
+        <div class="sj-news">
+          <h3>最新企业动态</h3>
+          <ul>
+            <li><time>2026-11-20</time><strong>《影像年鉴 2026》专题正式上线</strong><p>收录本年度 12 支重点原创短片，附导演手记与拍摄参数。</p></li>
+            <li><time>2026-11-12</time><strong>上传通道升级，支持 4K 无损源文件</strong><p>转码链路增加色彩管理，减少高动态范围素材的细节损失。</p></li>
+            <li><time>2026-11-05</time><strong>「冬天的第一支短片」挑战赛开启报名</strong><p>主题为「冷色调里的暖」，投稿截止 12 月 20 日，设 10 个入选名额。</p></li>
+            <li><time>2026-10-28</time><strong>与三家地方文化机构达成内容合作</strong><p>未来一年将联合制作地方手艺与方言记录系列。</p></li>
+          </ul>
+        </div>
+        <div class="sj-partners">
+          <h3>合作伙伴</h3>
+          <div class="sj-partner-grid">
+            <div class="sj-partner">拾光文创</div>
+            <div class="sj-partner">南岸书店</div>
+            <div class="sj-partner">青野影像器材</div>
+            <div class="sj-partner">旧城记忆馆</div>
+            <div class="sj-partner">木与陶工作室</div>
+            <div class="sj-partner">小城音乐现场</div>
+          </div>
+        </div>
+        <div class="sj-faq">
+          <h3>常见问题</h3>
+          <details open>
+            <summary>如何成为色界吧社区的认证创作者？</summary>
+            <p>连续发布 3 支以上原创高清作品并通过人工审核，即可在个人主页提交认证申请，一般在 3 个工作日内完成复核。</p>
+          </details>
+          <details>
+            <summary>投稿的作品必须是首发吗？</summary>
+            <p>优先推荐首发作品。已在其他平台发布的成片也可以投稿，但需在提交时注明，且不得存在未授权的音乐与素材。</p>
+          </details>
+          <details>
+            <summary>平台是否提供拍摄设备借用？</summary>
+            <p>对稳定更新的作者开放设备借用，包含手持相机与基础灯光，需提前 5 天预约，并签署使用协议。</p>
+          </details>
+          <details>
+            <summary>商业合作内容会标注吗？</summary>
+            <p>会。所有品牌委托内容均带有「商业合作」标识，与社区原创推荐分区展示，编辑推荐不含付费排序。</p>
+          </details>
+          <details>
+            <summary>如何下载高清原片？</summary>
+            <p>重点企划作品在详情页提供 4K 下载入口，需登录账号；普通作品支持 1080P 下载，请遵守页面标注的授权范围。</p>
+          </details>
+          <details>
+            <summary>作品审核一般需要多久？</summary>
+            <p>常规投稿 24 小时内出结果，专题投稿与商业合作内容为 3 个工作日，节假日顺延并会在站内通知。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 投稿 CTA -->
+  <section class="sj-section" id="sj-submit">
+    <div class="sj-wrap">
+      <div class="sj-cta">
+        <div>
+          <h2>把你的片子交给社区</h2>
+          <p>无论是一支完整的短片，还是一段还没剪完的素材，都可以投递。编辑会给出具体反馈，合适的作品将进入专题企划与首页推荐。</p>
+        </div>
+        <div class="sj-hero-actions" style="margin:0">
+          <button class="sj-btn sj-btn-primary" type="button" data-sj-modal="submit">立即投稿</button>
+          <button class="sj-btn sj-btn-ghost" type="button" data-sj-modal="feedback">意见反馈</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="sj-footer">
+  <div class="sj-wrap">
+    <div class="sj-footer-grid">
+      <div>
+        <h4>色界吧社区 · 官方网站</h4>
+        <p>以色彩为线索的原创高清影像社区，持续运营，深耕垂直领域，为创作者与企业提供值得信赖的内容生态与品牌服务。</p>
+        <p>内容合作：brand@sejieba.example<br>创作者支持：creator@sejieba.example</p>
+      </div>
+      <div>
+        <h4>浏览内容</h4>
+        <ul>
+          <li><a href="#sj-feature">精选内容</a></li>
+          <li><a href="#sj-topics">专题企划</a></li>
+          <li><a href="#sj-authors">创作者矩阵</a></li>
+          <li><a href="#sj-rank">数据榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#sj-deep">品牌深度解析</a></li>
+          <li><a href="#sj-help">企业动态</a></li>
+          <li><a href="#sj-help">帮助中心</a></li>
+          <li><a href="#sj-submit">投稿入口</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区规范</h4>
+        <ul>
+          <li><a href="#sj-help">内容准则</a></li>
+          <li><a href="#sj-help">原创声明</a></li>
+          <li><a href="#sj-help">授权说明</a></li>
+          <li><a href="#sj-help">隐私与反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sj-footer-bottom">
+      <span>© 2019–2026 色界吧社区 版权所有｜持续运营中</span>
+      <span>备案号：示例备案 00000000 号｜官方网站 · 原创正版 · 品质内容</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sj-toast" id="sj-toast" role="status" aria-live="polite"></div>
+
+<div class="sj-modal" id="sj-modal-submit" aria-hidden="true">
+  <div class="sj-modal-box" role="dialog" aria-modal="true" aria-label="投稿入口">
+    <h3>投稿入口</h3>
+    <p>填写作品名称与联系方式，编辑会在 3 个工作日内与你联系。请确保素材为原创或已获得完整授权。</p>
+    <input type="text" id="sj-submit-title" placeholder="作品名称，例如：凌晨四点的城市色卡" aria-label="作品名称">
+    <input type="text" id="sj-submit-contact" placeholder="联系方式（邮箱或手机）" aria-label="联系方式">
+    <textarea rows="3" id="sj-submit-note" placeholder="一句话介绍你的作品方向" aria-label="作品方向"></textarea>
+    <div class="sj-hero-actions">
+      <button class="sj-btn sj-btn-primary" type="button" id="sj-submit-send">提交作品</button>
+      <button class="sj-modal-close" type="button" data-sj-close>关闭</button>
+    </div>
+  </div>
+</div>
+
+<div class="sj-modal" id="sj-modal-comment" aria-hidden="true">
+  <div class="sj-modal-box" role="dialog" aria-modal="true" aria-label="发表评论">
+    <h3>写评论</h3>
+    <p>具体的建议比一句夸奖更能帮到创作者，欢迎留下你对画面、节奏或声音的看法。</p>
+    <textarea rows="4" id="sj-comment-text" placeholder="写下你的评论……" aria-label="评论内容"></textarea>
+    <div class="sj-hero-actions">
+      <button class="sj-btn sj-btn-primary" type="button" id="sj-comment-send">发布评论</button>
+      <button class="sj-modal-close" type="button" data-sj-close>关闭</button>
+    </div>
+  </div>
+</div>
+
+<div class="sj-modal" id="sj-modal-feedback" aria-hidden="true">
+  <div class="sj-modal-box" role="dialog" aria-modal="true" aria-label="意见反馈">
+    <h3>意见反馈</h3>
+    <p>遇到问题或有改进建议，请告诉我们。我们会认真阅读每一条反馈。</p>
+    <textarea rows="3" id="sj-feedback-text" placeholder="请描述你遇到的问题或建议" aria-label="反馈内容"></textarea>
+    <div class="sj-hero-actions">
+      <button class="sj-btn sj-btn-primary" type="button" id="sj-feedback-send">提交反馈</button>
+      <button class="sj-modal-close" type="button" data-sj-close>关闭</button>
+    </div>
+  </div>
+</div>
+
+<div class="sj-modal" id="sj-modal-author" aria-hidden="true">
+  <div class="sj-modal-box" role="dialog" aria-modal="true" aria-label="作者信息">
+    <h3 id="sj-author-name">作者档案</h3>
+    <p id="sj-author-desc"></p>
+    <div class="sj-hero-actions">
+      <button class="sj-btn sj-btn-primary" type="button" data-sj-close>知道了</button>
+    </div>
+  </div>
+</div>
+
+<button class="sj-totop" id="sj-totop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  var toast = document.getElementById('sj-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('sj-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('sj-show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('sj-burger');
+  var mobileNav = document.getElementById('sj-mobile-nav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('sj-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '✕ 收起' : '☰ 菜单';
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobileNav.classList.remove('sj-open');
+        burger.setAttribute('aria-expanded','false');
+        burger.textContent = '☰ 菜单';
+      });
+    });
+  }
+
+  /* 搜索前端反馈 */
+  var input = document.getElementById('sj-search-input');
+  var searchBtn = document.getElementById('sj-search-btn');
+  var res = document.getElementById('sj-searchres');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.sj-vitem, .sj-vcard'));
+  function doSearch(){
+    var q = (input.value || '').trim();
+    if(!q){
+      if(res){ res.classList.remove('sj-show'); res.textContent = ''; }
+      items.forEach(function(el){ el.style.display = ''; });
+      return;
+    }
+    var hit = 0;
+    items.forEach(function(el){
+      var text = el.textContent || '';
+      var match = text.indexOf(q) > -1;
+      el.style.display = match ? '' : 'none';
+      if(match) hit++;
+    });
+    if(res){
+      res.classList.add('sj-show');
+      res.textContent = hit > 0
+        ? '已筛选出 ' + hit + ' 条与「' + q + '」相关的内容'
+        : '没有找到与「' + q + '」匹配的内容，试试「城市」「剪辑」「手作」等关键词';
+    }
+  }
+  if(searchBtn){ searchBtn.addEventListener('click', doSearch); }
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  /* 标签筛选 */
+  var chips = document.querySelectorAll('#sj-filter-chips .sj-chip');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('sj-on'); });
+      chip.classList.add('sj-on');
+      var f = chip.getAttribute('data-filter');
+      items.forEach(function(el){
+        var cat = el.getAttribute('data-cat');
+        el.style.display = (f === 'all' || cat === f) ? '' : 'none';
+      });
+    });
+  });
+
+  /* 点赞 / 收藏 */
+  document.querySelectorAll('[data-sj-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var liked = btn.classList.toggle('sj-liked');
+      var span = btn.querySelector('span');
+      if(span){
+        var raw = span.textContent.replace(/[^\d.]/g,'');
+        var num = parseFloat(raw);
+        var unit = span.textContent.indexOf('万') > -1 ? '万' : '';
+        if(!isNaN(num)){
+          num = liked ? num + 0.1 : num - 0.1;
+          span.textContent = num.toFixed(1) + unit;
+        }
+      }
+      var icon = btn.textContent.trim().charAt(0);
+      btn.childNodes[0].nodeValue = liked ? '♥ 点赞 ' : '♡ 点赞 ';
+      showToast(liked ? '已点赞，感谢你的支持' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('[data-sj-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var saved = btn.classList.toggle('sj-saved');
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已收藏到你的片单' : '已取消收藏');
+    });
+  });
+
+  /* 复制链接 */
+  document.querySelectorAll('[data-sj-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = '色界吧社区 · 精选内容：凌晨四点的城市色卡';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){
+          showToast('链接已复制到剪贴板');
+        }).catch(function(){ showToast('复制失败，请手动选择文本'); });
+      } else {
+        showToast('当前浏览器不支持自动复制');
+      }
+    });
+  });
+
+  /* 弹窗 */
+  function openModal(id){
+    var m = document.getElementById('sj-modal-' + id);
+    if(m){ m.classList.add('sj-show'); m.setAttribute('aria-hidden','false'); }
+  }
+  function closeAll(){
+    document.querySelectorAll('.sj-modal').forEach(function(m){
+      m.classList.remove('sj-show');
+      m.setAttribute('aria-hidden','true');
+    });
+  }
+  document.querySelectorAll('[data-sj-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn.getAttribute('data-sj-modal')); });
+  });
+  document.querySelectorAll('[data-sj-close]').forEach(function(btn){
+    btn.addEventListener('click', closeAll);
+  });
+  document.querySelectorAll('.sj-modal').forEach(function(m){
+    m.addEventListener('click', function(e){ if(e.target === m) closeAll(); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+
+  /* 投稿 / 评论 / 反馈提交 */
+  var submitSend = document.getElementById('sj-submit-send');
+  if(submitSend){
+    submitSend.addEventListener('click', function(){
+      var t = (document.getElementById('sj-submit-title').value || '').trim();
+      var c = (document.getElementById('sj-submit-contact').value || '').trim();
+      if(!t || !c){ showToast('请填写作品名称与联系方式'); return; }
+      closeAll();
+      showToast('投稿已提交，编辑会在 3 个工作日内联系你');
+    });
+  }
+  var commentSend = document.getElementById('sj-comment-send');
+  if(commentSend){
+    commentSend.addEventListener('click', function(){
+      var txt = (document.getElementById('sj-comment-text').value || '').trim();
+      if(!txt){ showToast('评论内容不能为空'); return; }
+      closeAll();
+      showToast('评论已发布，感谢你的认真反馈');
+      document.getElementById('sj-comment-text').value = '';
+    });
+  }
+  var feedbackSend = document.getElementById('sj-feedback-send');
+  if(feedbackSend){
+    feedbackSend.addEventListener('click', function(){
+      var txt = (document.getElementById('sj-feedback-text').value || '').trim();
+      if(!txt){ showToast('请填写反馈内容'); return; }
+      closeAll();
+      showToast('反馈已收到，我们会尽快处理');
+      document.getElementById('sj-feedback-text').value = '';
+    });
+  }
+
+  /* 作者档案弹窗 */
+  var authorData = {
+    '阿岸': '阿岸，城市探索方向创作者，入驻色界吧社区第五年。累计发布 128 支原创短片，代表作《凌晨四点的城市色卡》。擅长自然光与长镜头，习惯在同一地点反复拍摄不同天气。合作过地方文旅与独立书店品牌。',
+    '老黎的手作间': '老黎，陶艺创作者，车库工作室主理人，十四年制陶经验。视频以真实工序为主，不回避失败与返工。社区手作分类长期高口碑作者，作品《第十四窑》入选年度影像年鉴。',
+    '夏知剪辑室': '夏知，影像教学创作者，前广告公司剪辑师。课程以可检查的作业流程著称，累计帮助三千余名新人完成第一支短片。关注节奏、停顿与信息密度。',
+    '周野访谈录': '周野，人物访谈主持，做深度对话第六年。擅长长时段访谈与现场观察，提问克制、节奏舒缓。访谈对象覆盖手艺人、乐手与普通劳动者。',
+    '青禾植物染': '青禾，植物染手作者，在小城经营染坊。视频记录天然染料的配比、媒染与失败复盘的完整过程，画面以大地色与青绿为主，是社区生活方式方向代表作者之一。',
+    '小满看现场': '小满，独立音乐现场记录者，常年跑小型演出场地。作品强调现场氛围与乐手手部细节，同时制作本地音乐人短访谈，累计发布 97 支现场影像。'
+  };
+  document.querySelectorAll('[data-sj-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-sj-author');
+      var box = document.getElementById('sj-author-name');
+      var desc = document.getElementById('sj-author-desc');
+      if(box) box.textContent = name + ' · 作者档案';
+      if(desc) desc.textContent = authorData[name] || '该创作者长期在色界吧社区更新原创高清作品，具体档案请进入个人主页查看。';
+      openModal('author');
+    });
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('sj-totop');
+  window.addEventListener('scroll', function(){
+    if(!toTop) return;
+    if(window.scrollY > 480){ toTop.classList.add('sj-show'); }
+    else { toTop.classList.remove('sj-show'); }
+  }, {passive:true});
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+          </html>
